@@ -1,11 +1,11 @@
 {
   "author": "Abel Francisco",
   "name": "calificacionEmpresas",
-  "description": "Calificación de Alumnos a Empresas en Prácticas",
+  "description": "Calificación de Alumnos a Empresas en Prácticas (utilizando Framework Express)",
   "version": "0.0.1",
   "license": "GPL-2.0",
   "repository": {
-    "url": "git://github.com/jfrancisco4490/calificacionEmpresa.git"
+    "url": "git://github.com/jfrancisco4490/calificacionEmpresa_2.git"
   },
   "scripts": {
     "start": "node ./bin/www",
