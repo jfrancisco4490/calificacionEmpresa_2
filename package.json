@@ -19,7 +19,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "sqlite3": ">=3.0"
+    "sqlite3": "^3.1.1"
   },
   "devDependencies": {
     "docco": "^0.7.0",
