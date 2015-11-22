@@ -1,6 +1,8 @@
 # calificacionEmpresa_2
 Programa de calificación de empresas o instituciones por parte de alumnos u otros usuarios (utilizando _Framework Express_)
 
+[![Build Status](https://snap-ci.com/jfrancisco4490/calificacionEmpresa_2/branch/master/build_image)](https://snap-ci.com/jfrancisco4490/calificacionEmpresa_2/branch/master)
+
 **Elaborado por:** Abel Josué Francisco Agra
 
 La presente librería incluye diversas funcionalidades que permiten asociar calificaciones o valoraciones numéricas a las empresas que ofertan prácticas a estudiantes. 
