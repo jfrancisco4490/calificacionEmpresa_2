@@ -1,0 +1,6 @@
+{
+  "name": "Calificación de Alumnos a Empresas",
+  "description": "Programa para definir calificaciones de Alumnos (u otros usuarios) a Empresas o Instituciones Públicas en las que han trabajado",
+  "repository": "https://github.com/jfrancisco4490/calificacionEmpresa_2",
+  "keywords": ["node", "express", "Cloud Computing"]
+}

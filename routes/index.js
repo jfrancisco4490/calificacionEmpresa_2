@@ -25,7 +25,9 @@ var libCalif = require('../lib/libCalificacionEmpresa.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  res.render('index', { titulo: 'Calificación de Empresas', descripcion: 'Operaciones para valorar a una determinada empresa o institución por parte de alumnos que han trabajado en estas.' });
+
 });
 
 // Para manejar solicitudes de creación de nuevas empresas
@@ -36,11 +38,27 @@ router.put('/empresa/:id/:nombre/:direccion/:area', function(req, response) {
 
 });
 
+// Para manejar solicitudes de registro de nuevos alumnos
+router.put('/alumno/:usr/:nombre/:apellido/:extra', function(req, response) {
+
+	libCalif.crearAlumno(db, req.params.usr, req.params.nombre, req.params.apellido, req.params.extra);
+	response.send("[INFO] Creacion de Alumno [Usuario: "+req.params.usr+", Nombres: "+req.params.nombre+", Apellidos: "+req.params.apellido+", Informacion Adicional: "+req.params.extra+"] Finalizada con exito!!!");
+
+});
+
 // Para gestionar solicitudes de registro de nuevas calificaciones
 router.put('/calificacion/:empresa/:alumno/:valor', function(req, response) {
 
 	libCalif.crearCalificacion(db, req.params.empresa, req.params.alumno, req.params.valor);
 	response.send("[INFO] Creacion de Calificacion [Empresa: "+req.params.empresa+", Alumno: "+req.params.alumno+", Valor: "+req.params.valor+"] Finalizada con exito!!!");
+
+});
+
+// Para gestionar solicitudes de actualización de calificaciones
+router.post('/calificacion/:empresa/:alumno/:valor', function(req, response) {
+
+	libCalif.modificarCalificacion(db, req.params.empresa, req.params.alumno, req.params.valor);
+	response.send("[INFO] Modificacion de Calificacion [Empresa: "+req.params.empresa+", Alumno: "+req.params.alumno+", Nuevo Valor: "+req.params.valor+"] Finalizada con exito!!!");
 
 });
 

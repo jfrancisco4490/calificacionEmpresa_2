@@ -50,7 +50,23 @@ describe('Calif_Func_Tests', function(){
       			if (err) {
             		return done(err);
           		}
-      			res.text.should.match(/[INFO] Creacion de Empresa [Id: Emp4, Nombre: Empresa4, Direccion: Direccion4, Area: Area4] Finalizada con exito!!!/);
+      			res.text.should.match(/Finalizada con exito/);
+      			done();
+      		});
+		});
+	});
+	
+	// Prueba de creación de nuevo alumno
+	describe("PUT Alumno", function() {
+		it('Debería Crear Nuevo Alumno', function (done) {
+			request(app)
+			.put('/alumno/Usr4/Nombre4/Apellidos4/Extra4')
+			.expect(200,done)
+			.end(function(err, res){
+      			if (err) {
+            		return done(err);
+          		}
+      			res.text.should.match(/Finalizada con exito/);
       			done();
       		});
 		});
@@ -66,23 +82,23 @@ describe('Calif_Func_Tests', function(){
       			if (err) {
             		return done(err);
           		}
-      			res.text.should.match(/[INFO] Creacion de Calificacion [Empresa: Emp4, Alumno: Usr1, Valor: 3] Finalizada con exito!!!/);
+      			res.text.should.match(/Finalizada con exito/);
       			done();
       		});
 		});
 	});
 	
-	// Prueba de eliminación de calificación
-	describe("DELETE Calificación", function() {
-		it('Debería Eliminar Calificación', function (done) {
+	// Prueba de modificación de calificación
+	describe("POST Calificación", function() {
+		it('Debería Modificar Calificación', function (done) {
 			request(app)
-			.delete('/calificacion/Emp4/Usr1')
+			.post('/calificacion/Emp4/Usr1/1')
 			.expect(200,done)
 			.end(function(err, res){
       			if (err) {
             		return done(err);
           		}
-      			res.text.should.match(/[INFO] Eliminacion de Calificacion [Empresa: Emp1, Alumno: Usr1] Finalizada con exito!!!/);
+      			res.text.should.match(/Finalizada con exito/);
       			done();
       		});
 		});
@@ -98,7 +114,7 @@ describe('Calif_Func_Tests', function(){
       			if (err) {
             		return done(err);
           		}
-      			res.text.should.match(/[INFO] Ranking de empresas listado correctamente!!!/);
+      			res.text.should.match(/listado correctamente/);
       			done();
       		});
 		});
@@ -114,7 +130,24 @@ describe('Calif_Func_Tests', function(){
       			if (err) {
             		return done(err);
           		}
-      			res.text.should.match(/[INFO] Calificaciones de la Empresa 'Emp4' listadas correctamente!!!/);
+      			res.text.should.match(/listadas correctamente/);
+      			done();
+      		});
+		});
+	});
+	
+	
+	// Prueba de eliminación de calificación
+	describe("DELETE Calificación", function() {
+		it('Debería Eliminar Calificación', function (done) {
+			request(app)
+			.delete('/calificacion/Emp4/Usr1')
+			.expect(200,done)
+			.end(function(err, res){
+      			if (err) {
+            		return done(err);
+          		}
+      			res.text.should.match(/Finalizada con exito/);
       			done();
       		});
 		});
