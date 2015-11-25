@@ -8,7 +8,7 @@
     "url": "git://github.com/jfrancisco4490/calificacionEmpresa_2.git"
   },
   "scripts": {
-  	"prestart": "./config/config_bd.sh",
+  	"postinstall": "./config/config_bd.sh",
     "start": "node ./bin/www",
     "test": "mocha"
   },
