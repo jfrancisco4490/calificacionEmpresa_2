@@ -9,7 +9,7 @@
   },
   "scripts": {
   	"postinstall": "./config/config_bd.sh",
-    "start": "node ./bin/www",
+    "start": "node app.js",
     "test": "mocha"
   },
   "dependencies": {
